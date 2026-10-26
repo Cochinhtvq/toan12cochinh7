@@ -1,0 +1,1014 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hộp Quà Nguyên Hàm</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Patrick+Hand&display=swap">
+<style>
+/* Layout: a "vở ô li" desk — 15 gift boxes on graph paper; opening a box turns the page into a full-screen question stage */
+:root{
+  --paper:#fbfcff; --grid:rgba(64,98,190,.09); --grid-strong:rgba(64,98,190,.17); --margin:#e0605c;
+  --ink:#1b2340; --muted:#596383; --card:#ffffff; --line:#d8dff0; --veil:rgba(251,252,255,.86);
+  --nb:#13917c; --nb-2:#0c6d5d; --nb-soft:#e2f4f0;
+  --th:#2d5bd3; --th-2:#1e41a3; --th-soft:#e6ecfd;
+  --vd:#c0306b; --vd-2:#8f1f4e; --vd-soft:#fbe6ef;
+  --gold:#e3a72f; --gold-2:#f3c75a; --gold-soft:#fdf3dc;
+  --ok:#1b8f52; --ok-soft:#e1f5ea; --bad:#cf3434; --bad-soft:#fde8e8; --pen:#d33f3a;
+  --shadow:0 1px 0 rgba(27,35,64,.05),0 10px 26px -14px rgba(27,35,64,.35);
+  --f-display:"Baloo 2","Be Vietnam Pro",system-ui,sans-serif;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-hand:"Patrick Hand","Segoe Print","Comic Sans MS",cursive;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f1528; --grid:rgba(140,170,255,.055); --grid-strong:rgba(140,170,255,.1); --margin:#9b4446;
+  --ink:#e8ecfa; --muted:#a3acc9; --card:#182039; --line:#2b3658; --veil:rgba(15,21,40,.86);
+  --nb:#25b89c; --nb-2:#14806c; --nb-soft:rgba(37,184,156,.15);
+  --th:#5f86f5; --th-2:#3a5fcb; --th-soft:rgba(95,134,245,.16);
+  --vd:#e9508a; --vd-2:#ad2e61; --vd-soft:rgba(233,80,138,.15);
+  --gold:#f0b940; --gold-2:#f8d277; --gold-soft:rgba(240,185,64,.14);
+  --ok:#3fcf86; --ok-soft:rgba(63,207,134,.14); --bad:#ff6b6b; --bad-soft:rgba(255,107,107,.14); --pen:#ff7a72;
+  --shadow:0 1px 0 rgba(0,0,0,.35),0 12px 30px -14px rgba(0,0,0,.7);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0f1528; --grid:rgba(140,170,255,.055); --grid-strong:rgba(140,170,255,.1); --margin:#9b4446;
+  --ink:#e8ecfa; --muted:#a3acc9; --card:#182039; --line:#2b3658; --veil:rgba(15,21,40,.86);
+  --nb:#25b89c; --nb-2:#14806c; --nb-soft:rgba(37,184,156,.15);
+  --th:#5f86f5; --th-2:#3a5fcb; --th-soft:rgba(95,134,245,.16);
+  --vd:#e9508a; --vd-2:#ad2e61; --vd-soft:rgba(233,80,138,.15);
+  --gold:#f0b940; --gold-2:#f8d277; --gold-soft:rgba(240,185,64,.14);
+  --ok:#3fcf86; --ok-soft:rgba(63,207,134,.14); --bad:#ff6b6b; --bad-soft:rgba(255,107,107,.14); --pen:#ff7a72;
+  --shadow:0 1px 0 rgba(0,0,0,.35),0 12px 30px -14px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{min-height:100%}
+body{
+  margin:0; color:var(--ink); background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid-strong) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-strong) 1px,transparent 1px),
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:96px 96px,96px 96px,24px 24px,24px 24px;
+  font-family:var(--f-body); font-size:16px; line-height:1.55;
+}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* ---------- top bar ---------- */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.brand .mark{font-family:"Times New Roman",Georgia,serif;font-style:italic;font-size:64px;line-height:.8;color:var(--gold);transform:translateY(-2px)}
+.brand h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(28px,4vw,40px);line-height:1;letter-spacing:-.01em;text-wrap:balance}
+.brand p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:8px 16px;font-weight:600;font-size:14px;cursor:pointer;transition:border-color .15s,transform .15s}
+.btn:hover{border-color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.primary:hover{opacity:.9}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- scoreboard ---------- */
+.scores{margin-top:18px;display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.team{display:flex;align-items:center;gap:12px;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:8px 14px 8px 10px;min-width:150px;transition:border-color .2s,box-shadow .2s}
+.team .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;color:#fff;background:var(--tc);flex:none;font-size:15px}
+.team .nm{font-weight:600;font-size:14px;line-height:1.2;max-width:14ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team .sc{font-family:var(--f-display);font-weight:800;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+.team .sub{font-size:12px;color:var(--muted)}
+.team.turn{border-color:var(--tc);box-shadow:0 0 0 4px color-mix(in srgb,var(--tc) 18%,transparent)}
+.team .turnlbl{display:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tc)}
+.team.turn .turnlbl{display:block}
+.progress{margin-left:auto;align-self:center;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.progress b{color:var(--ink);font-family:var(--f-display);font-size:20px}
+
+/* ---------- main layout ---------- */
+.main{margin-top:22px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+@media (max-width:960px){.main{grid-template-columns:minmax(0,1fr)}}
+.board{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 18px 18px 40px;box-shadow:var(--shadow)}
+.board::before{content:"";position:absolute;top:0;bottom:0;left:24px;width:2px;background:var(--margin);opacity:.55}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px 12px}
+@media (max-width:720px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.board{padding-left:30px}.board::before{left:16px}}
+
+/* ---------- gift box ---------- */
+.slot{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.box{position:relative;width:100%;border:0;background:none;padding:6px 0 0;cursor:pointer;display:block;border-radius:12px}
+.gift{position:relative;width:80%;max-width:130px;margin:0 auto;aspect-ratio:1/1;--c:var(--th);--c2:var(--th-2)}
+.gift.nb{--c:var(--nb);--c2:var(--nb-2)} .gift.th{--c:var(--th);--c2:var(--th-2)} .gift.vd{--c:var(--vd);--c2:var(--vd-2)}
+.g-body{position:absolute;left:9%;right:9%;top:38%;bottom:0;background:var(--c);border-radius:6px 6px 10px 10px;box-shadow:inset 0 -9px 0 rgba(0,0,0,.14);transition:filter .3s,opacity .3s}
+.g-body::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:16%;transform:translateX(-50%);background:var(--gold)}
+.g-lid{position:absolute;left:2%;right:2%;top:24%;height:18%;background:var(--c2);border-radius:6px;transform-origin:12% 100%;transition:transform .35s cubic-bezier(.3,1.6,.5,1);z-index:2}
+.g-lid::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:16%;transform:translateX(-50%);background:var(--gold-2)}
+.g-bow{position:absolute;left:50%;bottom:92%;width:50%;height:120%;transform:translateX(-50%)}
+.g-bow::before,.g-bow::after{content:"";position:absolute;bottom:0;width:50%;height:100%;border:4px solid var(--gold);background:var(--gold-soft)}
+.g-bow::before{left:0;border-radius:70% 30% 10% 70%;transform:rotate(-14deg);transform-origin:100% 100%}
+.g-bow::after{right:0;border-radius:30% 70% 70% 10%;transform:rotate(14deg);transform-origin:0 100%}
+.g-num{position:absolute;left:50%;top:64%;transform:translate(-50%,-50%);min-width:2.1em;height:2.1em;padding:0 .3em;border-radius:999px;background:var(--card);color:var(--ink);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:clamp(15px,2vw,20px);box-shadow:0 2px 0 rgba(0,0,0,.18);z-index:1;font-variant-numeric:tabular-nums}
+.box:not(:disabled):hover .gift{animation:wiggle .55s ease}
+.box:not(:disabled):hover .g-lid{transform:translateY(-10%) rotate(-4deg)}
+@keyframes wiggle{0%,100%{rotate:0deg}25%{rotate:-4deg}60%{rotate:3deg}}
+.slot .lbl{font-size:12px;font-weight:600;color:var(--muted);text-align:center;line-height:1.25}
+.slot .lbl i{font-style:normal;display:block;font-weight:500;font-variant-numeric:tabular-nums}
+.slot.opened .g-lid{transform:translate(-8%,-70%) rotate(-30deg)}
+.slot.opened .g-body{filter:saturate(.3);opacity:.6}
+.stamp{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%) rotate(-8deg);z-index:3;font-family:var(--f-hand);font-size:clamp(18px,2.4vw,26px);line-height:1;padding:.15em .45em;border:2.5px solid currentColor;border-radius:8px;background:var(--card);white-space:nowrap}
+.stamp.ok{color:var(--ok)} .stamp.bad{color:var(--pen)}
+
+/* ---------- aside ---------- */
+.aside{display:grid;gap:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.panel h2{margin:0 0 10px;font-family:var(--f-display);font-weight:800;font-size:20px;line-height:1.1}
+.legend{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.legend li{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;font-size:15px;line-height:1.3}
+.sw{width:18px;height:18px;border-radius:5px;background:var(--c)}
+.legend .meta{display:block;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.rules{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
+.gifts{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;font-size:14px;align-items:center}
+.gtag{font-family:var(--f-display);font-weight:800;min-width:3em;text-align:center;padding:1px 8px;border-radius:8px;background:var(--gold-soft);color:var(--ink);border:1.5px solid var(--gold)}
+details.setup summary{cursor:pointer;font-family:var(--f-display);font-weight:800;font-size:20px;list-style:none;display:flex;align-items:center;justify-content:space-between}
+details.setup summary::-webkit-details-marker{display:none}
+details.setup summary::after{content:"+";font-size:24px;color:var(--muted)}
+details.setup[open] summary::after{content:"–"}
+.seg{display:flex;gap:6px;margin:12px 0}
+.seg label{flex:1}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:block;text-align:center;padding:6px 0;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+.seg input:checked+span{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.seg input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
+.names{display:grid;gap:8px;margin-bottom:12px}
+.names input{width:100%;padding:8px 10px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;font-size:14px}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.confirm{margin-top:10px;padding:12px;border:1.5px dashed var(--pen);border-radius:12px;font-size:14px;display:grid;gap:10px}
+.confirm .row{display:flex;gap:8px;flex-wrap:wrap}
+
+.mjwarn{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--bad-soft);color:var(--ink);border:1.5px solid var(--bad);font-size:14px}
+
+/* ---------- stage (question view) ---------- */
+.stage{position:fixed;inset:0;z-index:40;overflow-y:auto;background-color:var(--paper);background-image:inherit;background-size:inherit;overscroll-behavior:contain}
+body.staged{overflow:hidden}
+.stage-in{max-width:980px;margin:0 auto;padding-block:max(16px,env(safe-area-inset-top,0px)) max(40px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.reveal{min-height:70vh;display:grid;place-items:center}
+.reveal .gift{width:min(240px,58vw);max-width:none}
+.reveal .g-num{font-size:32px}
+.reveal.go .gift{animation:shake .5s ease}
+.reveal.go .g-lid{animation:lidfly .55s .42s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes shake{0%,100%{rotate:0deg}20%{rotate:-6deg}40%{rotate:6deg}60%{rotate:-4deg}80%{rotate:3deg}}
+@keyframes lidfly{to{transform:translate(55%,-320%) rotate(38deg);opacity:0}}
+
+.qhead{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;justify-content:space-between}
+.qmeta{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.02em;background:var(--cs);color:var(--c);border:1.5px solid var(--c)}
+.chip.nb{--c:var(--nb);--cs:var(--nb-soft)} .chip.th{--c:var(--th);--cs:var(--th-soft)} .chip.vd{--c:var(--vd);--cs:var(--vd-soft)}
+.chip.plain{--c:var(--muted);--cs:var(--card)}
+.turnline{font-size:14px;color:var(--muted)} .turnline b{color:var(--ink)}
+.timer{display:flex;align-items:center;gap:10px}
+.ring{position:relative;width:76px;height:76px;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:7}
+.ring .trk{stroke:var(--line)}
+.ring .bar{stroke:var(--c,var(--th));stroke-linecap:round;transition:stroke .3s}
+.ring .num{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums}
+.timer.low .bar{stroke:var(--bad)} .timer.low .num{color:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.qcard{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);font-size:clamp(18px,2.1vw,23px);line-height:1.65}
+.qcard .qno{font-family:var(--f-display);font-weight:800;color:var(--c);margin-right:6px}
+.qcard.nb{--c:var(--nb)} .qcard.th{--c:var(--th)} .qcard.vd{--c:var(--vd)}
+.opts{margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.opts{grid-template-columns:minmax(0,1fr)}}
+.opt{display:flex;align-items:center;gap:14px;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 16px;min-height:72px;cursor:pointer;font-size:clamp(17px,1.9vw,21px);transition:border-color .15s,background .15s,transform .1s;min-width:0}
+.opt .k{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:18px;background:var(--paper);border:2px solid var(--line)}
+.opt .v{min-width:0;overflow-x:auto;overflow-y:hidden}
+.opt:not(:disabled):hover{border-color:var(--ink)}
+.opt.sel{border-color:var(--gold);background:var(--gold-soft)}
+.opt.sel .k{background:var(--gold);border-color:var(--gold);color:#1b2340}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right .k{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .k{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.acts{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.acts .keys{font-size:13px;color:var(--muted)}
+.acts .right{display:flex;gap:10px;flex-wrap:wrap}
+.paused .opts{filter:blur(6px);pointer-events:none}
+.pausenote{margin-top:12px;font-family:var(--f-hand);font-size:22px;color:var(--pen)}
+
+.result{margin-top:20px;display:grid;gap:16px}
+.verdict{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:16px 20px;border-radius:16px;border:2px solid var(--vc);background:var(--vs)}
+.verdict.ok{--vc:var(--ok);--vs:var(--ok-soft)} .verdict.bad{--vc:var(--bad);--vs:var(--bad-soft)} .verdict.info{--vc:var(--line);--vs:var(--card)}
+.verdict h3{margin:0;font-family:var(--f-display);font-weight:800;font-size:28px;line-height:1.1;color:var(--vc)}
+.verdict.info h3{color:var(--ink)}
+.verdict p{margin:2px 0 0;font-size:15px}
+.giftcard{margin-left:auto;display:flex;align-items:center;gap:12px;background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:8px 14px 8px 8px}
+.giftcard .gv{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:var(--gold);color:#1b2340;font-family:var(--f-display);font-weight:800;font-size:24px}
+.giftcard .gt{font-size:14px;line-height:1.35} .giftcard .gt b{display:block;font-size:15px}
+.giftcard.pop{animation:pop .5s cubic-bezier(.3,1.7,.5,1)}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.solution{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 24px;box-shadow:var(--shadow)}
+.solution h3{margin:0 0 12px;font-family:var(--f-display);font-weight:800;font-size:22px}
+.solution ol{margin:0;padding:0;list-style:none;counter-reset:st;display:grid;gap:12px}
+.solution li{counter-increment:st;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;font-size:17px;line-height:1.7}
+.solution li::before{content:"Bước " counter(st);font-family:var(--f-display);font-weight:700;font-size:13px;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:2px 8px;height:fit-content;margin-top:3px;white-space:nowrap}
+.solution .conclude{margin-top:14px;font-weight:600}
+.note{margin-top:14px;padding:10px 14px 10px 16px;border-left:3px solid var(--pen);font-family:var(--f-hand);font-size:21px;line-height:1.45;color:var(--pen)}
+.note mjx-container{color:var(--pen)}
+.back{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:2px 0}
+mjx-container{font-size:105%!important}
+
+/* ---------- results ---------- */
+.final{max-width:720px;margin:4vh auto 0;text-align:center}
+.final h2{font-family:var(--f-display);font-weight:800;font-size:clamp(32px,5vw,48px);line-height:1.05;margin:0 0 6px;text-wrap:balance}
+.final .lead{color:var(--muted);margin:0 0 22px}
+.rank{display:grid;gap:10px;text-align:left}
+.rank .r{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;gap:14px;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px 16px}
+.rank .r.first{border-color:var(--gold);background:var(--gold-soft)}
+.rank .pos{font-family:var(--f-display);font-weight:800;font-size:26px;text-align:center;color:var(--muted)}
+.rank .first .pos{color:var(--gold)}
+.rank .nm{font-weight:700;font-size:18px}
+.rank .st{font-size:13px;color:var(--muted)}
+.rank .pts{font-family:var(--f-display);font-weight:800;font-size:30px;font-variant-numeric:tabular-nums}
+.final .row{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+
+<div class="wrap" id="app">
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">∫</span>
+      <div>
+        <h1>Hộp quà Nguyên hàm</h1>
+        <p>Toán 12 · Nguyên hàm · 15 hộp quà, 15 câu hỏi</p>
+      </div>
+    </div>
+    <div class="tools">
+      <button class="btn" id="soundBtn" type="button" aria-pressed="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path id="soundWave" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        <span id="soundLbl">Âm thanh: bật</span>
+      </button>
+      <button class="btn" id="newBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+        Ván mới
+      </button>
+    </div>
+  </header>
+  <div class="confirm" id="newConfirm" hidden>
+    <span>Bắt đầu ván mới sẽ xóa điểm và xếp lại các hộp quà.</span>
+    <div class="row"><button class="btn primary" id="newYes" type="button">Bắt đầu ván mới</button><button class="btn" id="newNo" type="button">Tiếp tục ván này</button></div>
+  </div>
+
+  <section class="scores" id="scores" aria-label="Bảng điểm"></section>
+  <div class="mjwarn" id="mjwarn" hidden>Chưa tải được bộ hiển thị công thức toán. Hãy kiểm tra kết nối mạng rồi tải lại trang để công thức hiển thị đúng.</div>
+
+  <div class="main">
+    <section class="board" aria-label="Bảng hộp quà">
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <aside class="aside">
+      <div class="panel">
+        <h2>Ba loại hộp</h2>
+        <ul class="legend">
+          <li style="--c:var(--nb)"><span class="sw"></span><span><b>Nhận biết</b><span class="meta">5 hộp · 60 giây · 10 điểm</span></span></li>
+          <li style="--c:var(--th)"><span class="sw"></span><span><b>Thông hiểu</b><span class="meta">7 hộp · 120 giây · 20 điểm</span></span></li>
+          <li style="--c:var(--vd)"><span class="sw"></span><span><b>Vận dụng</b><span class="meta">3 hộp · 180 giây · 30 điểm</span></span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Cách chơi</h2>
+        <ol class="rules">
+          <li>Đội đến lượt chọn một hộp quà.</li>
+          <li>Chọn đáp án rồi bấm <b>Chốt đáp án</b> trước khi hết giờ.</li>
+          <li>Trả lời đúng: nhận điểm câu hỏi và món quà trong hộp. Trả lời sai hoặc hết giờ: mất cả điểm lẫn quà.</li>
+          <li>Hộp đã mở có thể bấm lại để xem lời giải.</li>
+        </ol>
+      </div>
+      <div class="panel">
+        <h2>Quà trong hộp</h2>
+        <div class="gifts">
+          <span class="gtag">×2</span><span>Nhân đôi điểm câu hỏi (3 hộp)</span>
+          <span class="gtag">+10</span><span>Thưởng thêm 10 điểm (4 hộp)</span>
+          <span class="gtag">+5</span><span>Thưởng thêm 5 điểm (5 hộp)</span>
+          <span class="gtag">★</span><span>Lời chúc may mắn (3 hộp)</span>
+        </div>
+      </div>
+      <details class="panel setup" id="setup">
+        <summary>Đội chơi</summary>
+        <div class="seg" role="radiogroup" aria-label="Số đội chơi">
+          <label><input type="radio" name="tc" id="tc1" value="1"><span>1 đội</span></label>
+          <label><input type="radio" name="tc" id="tc2" value="2"><span>2 đội</span></label>
+          <label><input type="radio" name="tc" id="tc3" value="3"><span>3 đội</span></label>
+          <label><input type="radio" name="tc" id="tc4" value="4"><span>4 đội</span></label>
+        </div>
+        <div class="names" id="names"></div>
+        <p class="hint">Đổi tên đội có hiệu lực ngay. Đổi số đội sẽ bắt đầu ván mới.</p>
+      </details>
+    </aside>
+  </div>
+</div>
+
+<div class="stage" id="stage" role="dialog" aria-modal="true" aria-label="Câu hỏi" hidden>
+  <div class="stage-in" id="stageIn"></div>
+</div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], packages: { "[+]": ["ams"] } },
+  svg: { fontCache: "global" },
+  options: { enableMenu: false },
+  startup: { typeset: false }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+<script>
+const QUESTIONS = [
+  /* ---------- NHẬN BIẾT (60 giây) ---------- */
+  {
+    lv: "nb",
+    q: String.raw`Hàm số \(F(x)\) được gọi là một <b>nguyên hàm</b> của hàm số \(f(x)\) trên khoảng \(K\) nếu`,
+    opts: [
+      String.raw`\(F'(x)=f(x)\) với mọi \(x\in K\).`,
+      String.raw`\(f'(x)=F(x)\) với mọi \(x\in K\).`,
+      String.raw`\(F'(x)=f'(x)\) với mọi \(x\in K\).`,
+      String.raw`\(F(x)=f(x)+C\) với mọi \(x\in K\).`
+    ],
+    ans: 0,
+    steps: [
+      String.raw`Theo định nghĩa: cho hàm số \(f(x)\) xác định trên khoảng \(K\). Hàm số \(F(x)\) là một nguyên hàm của \(f(x)\) trên \(K\) nếu \[F'(x)=f(x)\] với mọi \(x\in K\).`,
+      String.raw`Hiểu đơn giản: <b>lấy đạo hàm của \(F\) thì được \(f\)</b>.`,
+      String.raw`Ví dụ: \(\left(x^2\right)'=2x\) nên \(F(x)=x^2\) là một nguyên hàm của \(f(x)=2x\) trên \(\mathbb{R}\).`
+    ],
+    note: String.raw`Nguyên hàm là phép toán ngược của đạo hàm.`
+  },
+  {
+    lv: "nb",
+    q: String.raw`Họ nguyên hàm \(\displaystyle\int x^4\,dx\) bằng`,
+    opts: [
+      String.raw`\(4x^3+C\)`,
+      String.raw`\(\dfrac{x^5}{5}+C\)`,
+      String.raw`\(x^5+C\)`,
+      String.raw`\(\dfrac{x^5}{4}+C\)`
+    ],
+    ans: 1,
+    steps: [
+      String.raw`Áp dụng công thức nguyên hàm của hàm số lũy thừa: \[\int x^{\alpha}\,dx=\frac{x^{\alpha+1}}{\alpha+1}+C\qquad(\alpha\neq-1).\]`,
+      String.raw`Với \(\alpha=4\): \[\int x^4\,dx=\frac{x^{4+1}}{4+1}+C=\frac{x^5}{5}+C.\]`,
+      String.raw`Kiểm tra lại bằng đạo hàm: \(\left(\dfrac{x^5}{5}\right)'=\dfrac{5x^4}{5}=x^4\). Đúng.`
+    ],
+    note: String.raw`Cộng thêm 1 vào số mũ rồi chia cho số mũ mới. Còn \(4x^3\) là <b>đạo hàm</b> của \(x^4\), không phải nguyên hàm.`
+  },
+  {
+    lv: "nb",
+    q: String.raw`Họ nguyên hàm \(\displaystyle\int\cos x\,dx\) bằng`,
+    opts: [
+      String.raw`\(-\sin x+C\)`,
+      String.raw`\(-\cos x+C\)`,
+      String.raw`\(\cos x+C\)`,
+      String.raw`\(\sin x+C\)`
+    ],
+    ans: 3,
+    steps: [
+      String.raw`Ta có \((\sin x)'=\cos x\).`,
+      String.raw`Vậy \(\sin x\) là một nguyên hàm của \(\cos x\), suy ra \[\int\cos x\,dx=\sin x+C.\]`
+    ],
+    note: String.raw`Dễ nhầm dấu: \(\displaystyle\int\cos x\,dx=\sin x+C\), còn \(\displaystyle\int\sin x\,dx=-\cos x+C\).`
+  },
+  {
+    lv: "nb",
+    q: String.raw`Trên khoảng \((0;+\infty)\), họ nguyên hàm của hàm số \(f(x)=\dfrac{1}{x}\) là`,
+    opts: [
+      String.raw`\(\dfrac{1}{x^2}+C\)`,
+      String.raw`\(-\dfrac{1}{x^2}+C\)`,
+      String.raw`\(\ln x+C\)`,
+      String.raw`\(\ln\left(x^2\right)+C\)`
+    ],
+    ans: 2,
+    steps: [
+      String.raw`Trên khoảng \((0;+\infty)\) ta có \((\ln x)'=\dfrac{1}{x}\).`,
+      String.raw`Do đó \[\int\frac{1}{x}\,dx=\ln x+C.\]`,
+      String.raw`Loại \(\ln\left(x^2\right)+C\) vì \(\left(\ln x^2\right)'=\dfrac{2x}{x^2}=\dfrac{2}{x}\neq\dfrac{1}{x}\). Còn \(-\dfrac{1}{x^2}\) là <b>đạo hàm</b> của \(\dfrac{1}{x}\).`
+    ],
+    note: String.raw`Tổng quát: \(\displaystyle\int\frac{1}{x}\,dx=\ln|x|+C\). Không dùng công thức lũy thừa cho \(x^{-1}\) vì khi đó \(\alpha=-1\).`
+  },
+  {
+    lv: "nb",
+    q: String.raw`Họ nguyên hàm \(\displaystyle\int 3^x\,dx\) bằng`,
+    opts: [
+      String.raw`\(3^x\ln 3+C\)`,
+      String.raw`\(\dfrac{3^x}{\ln 3}+C\)`,
+      String.raw`\(\dfrac{3^{x+1}}{x+1}+C\)`,
+      String.raw`\(3^x+C\)`
+    ],
+    ans: 1,
+    steps: [
+      String.raw`Công thức nguyên hàm của hàm số mũ: \[\int a^x\,dx=\frac{a^x}{\ln a}+C\qquad(0\lt a\neq 1).\]`,
+      String.raw`Với \(a=3\): \[\int 3^x\,dx=\frac{3^x}{\ln 3}+C.\]`,
+      String.raw`Kiểm tra: \(\left(\dfrac{3^x}{\ln 3}\right)'=\dfrac{3^x\ln 3}{\ln 3}=3^x\). Đúng.`
+    ],
+    note: String.raw`\(3^x\) là hàm số mũ (biến \(x\) nằm ở số mũ) nên không dùng công thức \(\dfrac{x^{\alpha+1}}{\alpha+1}\) của hàm số lũy thừa.`
+  },
+
+  /* ---------- THÔNG HIỂU (120 giây) ---------- */
+  {
+    lv: "th",
+    q: String.raw`Họ nguyên hàm \(\displaystyle\int\left(3x^2-4x+5\right)dx\) bằng`,
+    opts: [
+      String.raw`\(x^3-2x^2+5x+C\)`,
+      String.raw`\(6x-4+C\)`,
+      String.raw`\(x^3-4x^2+5x+C\)`,
+      String.raw`\(x^3-2x^2+C\)`
+    ],
+    ans: 0,
+    steps: [
+      String.raw`Tách thành tổng các nguyên hàm (tính chất của nguyên hàm): \[\int\left(3x^2-4x+5\right)dx=3\int x^2\,dx-4\int x\,dx+\int 5\,dx.\]`,
+      String.raw`Tính từng phần: \(3\cdot\dfrac{x^3}{3}=x^3\); \(\;4\cdot\dfrac{x^2}{2}=2x^2\); \(\;\displaystyle\int 5\,dx=5x\).`,
+      String.raw`Kết quả: \[\int\left(3x^2-4x+5\right)dx=x^3-2x^2+5x+C.\]`,
+      String.raw`Kiểm tra: \(\left(x^3-2x^2+5x\right)'=3x^2-4x+5\). Đúng.`
+    ],
+    note: String.raw`Chỉ cần viết một hằng số \(C\) chung ở cuối. Đáp án \(6x-4\) là đạo hàm, không phải nguyên hàm.`
+  },
+  {
+    lv: "th",
+    q: String.raw`Họ nguyên hàm của hàm số \(f(x)=\sqrt{x}\) trên khoảng \((0;+\infty)\) là`,
+    opts: [
+      String.raw`\(\dfrac{1}{2\sqrt{x}}+C\)`,
+      String.raw`\(\dfrac{3}{2}x\sqrt{x}+C\)`,
+      String.raw`\(\dfrac{2}{3}x\sqrt{x}+C\)`,
+      String.raw`\(x\sqrt{x}+C\)`
+    ],
+    ans: 2,
+    steps: [
+      String.raw`Viết căn thức dưới dạng lũy thừa: \(\sqrt{x}=x^{\frac{1}{2}}\).`,
+      String.raw`Áp dụng công thức lũy thừa với \(\alpha=\dfrac{1}{2}\): \[\int x^{\frac{1}{2}}\,dx=\frac{x^{\frac{1}{2}+1}}{\frac{1}{2}+1}+C=\frac{x^{\frac{3}{2}}}{\frac{3}{2}}+C=\frac{2}{3}x^{\frac{3}{2}}+C.\]`,
+      String.raw`Vì \(x^{\frac{3}{2}}=x\cdot x^{\frac{1}{2}}=x\sqrt{x}\) nên \[\int\sqrt{x}\,dx=\frac{2}{3}x\sqrt{x}+C.\]`
+    ],
+    note: String.raw`Chia cho \(\dfrac{3}{2}\) chính là nhân với \(\dfrac{2}{3}\). Còn \(\dfrac{1}{2\sqrt{x}}\) là đạo hàm của \(\sqrt{x}\).`
+  },
+  {
+    lv: "th",
+    q: String.raw`Trên khoảng \((0;+\infty)\), họ nguyên hàm \(\displaystyle\int\frac{x^2-3x+2}{x}\,dx\) bằng`,
+    opts: [
+      String.raw`\(x^2-3x+2\ln x+C\)`,
+      String.raw`\(\dfrac{x^2}{2}-3x-\dfrac{2}{x^2}+C\)`,
+      String.raw`\(\dfrac{x^2}{2}-3+2\ln x+C\)`,
+      String.raw`\(\dfrac{x^2}{2}-3x+2\ln x+C\)`
+    ],
+    ans: 3,
+    steps: [
+      String.raw`Chia từng hạng tử của tử số cho \(x\): \[\frac{x^2-3x+2}{x}=x-3+\frac{2}{x}.\]`,
+      String.raw`Lấy nguyên hàm từng hạng tử: \(\displaystyle\int x\,dx=\frac{x^2}{2}\); \(\;\displaystyle\int(-3)\,dx=-3x\); \(\;\displaystyle\int\frac{2}{x}\,dx=2\ln x\) (vì \(x\gt 0\)).`,
+      String.raw`Kết quả: \[\int\frac{x^2-3x+2}{x}\,dx=\frac{x^2}{2}-3x+2\ln x+C.\]`
+    ],
+    note: String.raw`Không lấy nguyên hàm của tử chia cho nguyên hàm của mẫu. Luôn tách phân thức thành tổng trước.`
+  },
+  {
+    lv: "th",
+    q: String.raw`Họ nguyên hàm \(\displaystyle\int\left(2\sin x-3\cos x\right)dx\) bằng`,
+    opts: [
+      String.raw`\(2\cos x-3\sin x+C\)`,
+      String.raw`\(-2\cos x-3\sin x+C\)`,
+      String.raw`\(-2\cos x+3\sin x+C\)`,
+      String.raw`\(2\cos x+3\sin x+C\)`
+    ],
+    ans: 1,
+    steps: [
+      String.raw`Tách: \[\int\left(2\sin x-3\cos x\right)dx=2\int\sin x\,dx-3\int\cos x\,dx.\]`,
+      String.raw`Dùng bảng nguyên hàm: \(\displaystyle\int\sin x\,dx=-\cos x+C\) và \(\displaystyle\int\cos x\,dx=\sin x+C\).`,
+      String.raw`Suy ra \[\int\left(2\sin x-3\cos x\right)dx=2(-\cos x)-3\sin x+C=-2\cos x-3\sin x+C.\]`,
+      String.raw`Kiểm tra: \((-2\cos x-3\sin x)'=2\sin x-3\cos x\). Đúng.`
+    ],
+    note: String.raw`Nguyên hàm của \(\sin x\) mang dấu trừ: \(-\cos x\).`
+  },
+  {
+    lv: "th",
+    q: String.raw`Trên khoảng \(\left(-\dfrac{\pi}{2};\dfrac{\pi}{2}\right)\), họ nguyên hàm \(\displaystyle\int\left(e^x-\frac{1}{\cos^2x}\right)dx\) bằng`,
+    opts: [
+      String.raw`\(e^x+\tan x+C\)`,
+      String.raw`\(e^x-\cot x+C\)`,
+      String.raw`\(e^x-\tan x+C\)`,
+      String.raw`\(e^x+\cot x+C\)`
+    ],
+    ans: 2,
+    steps: [
+      String.raw`Ta có \(\left(e^x\right)'=e^x\) nên \(\displaystyle\int e^x\,dx=e^x+C\).`,
+      String.raw`Ta có \((\tan x)'=\dfrac{1}{\cos^2x}\) nên \(\displaystyle\int\frac{1}{\cos^2x}\,dx=\tan x+C\).`,
+      String.raw`Vậy \[\int\left(e^x-\frac{1}{\cos^2x}\right)dx=e^x-\tan x+C.\]`
+    ],
+    note: String.raw`Cặp công thức hay nhầm: \(\displaystyle\int\frac{dx}{\cos^2x}=\tan x+C\) và \(\displaystyle\int\frac{dx}{\sin^2x}=-\cot x+C\).`
+  },
+  {
+    lv: "th",
+    q: String.raw`Biết \(F(x)\) là một nguyên hàm của hàm số \(f(x)=3x^2+2x\) trên \(\mathbb{R}\) và \(F(1)=4\). Giá trị của \(F(2)\) bằng`,
+    opts: [
+      String.raw`\(14\)`,
+      String.raw`\(10\)`,
+      String.raw`\(12\)`,
+      String.raw`\(16\)`
+    ],
+    ans: 0,
+    steps: [
+      String.raw`Tìm họ nguyên hàm: \[F(x)=\int\left(3x^2+2x\right)dx=x^3+x^2+C.\]`,
+      String.raw`Dùng điều kiện \(F(1)=4\): \(1^3+1^2+C=4\Leftrightarrow 2+C=4\Leftrightarrow C=2\).`,
+      String.raw`Vậy \(F(x)=x^3+x^2+2\), suy ra \[F(2)=2^3+2^2+2=8+4+2=14.\]`
+    ],
+    note: String.raw`Điều kiện \(F(1)=4\) dùng để tìm \(C\). Nếu quên \(C\) sẽ ra kết quả sai là \(12\).`
+  },
+  {
+    lv: "th",
+    q: String.raw`Họ nguyên hàm \(\displaystyle\int\sin^2\frac{x}{2}\,dx\) bằng`,
+    opts: [
+      String.raw`\(\dfrac{x+\sin x}{2}+C\)`,
+      String.raw`\(\dfrac{1}{3}\sin^3\dfrac{x}{2}+C\)`,
+      String.raw`\(\dfrac{x-\cos x}{2}+C\)`,
+      String.raw`\(\dfrac{x-\sin x}{2}+C\)`
+    ],
+    ans: 3,
+    steps: [
+      String.raw`Dùng công thức hạ bậc \(\sin^2a=\dfrac{1-\cos 2a}{2}\) với \(a=\dfrac{x}{2}\): \[\sin^2\frac{x}{2}=\frac{1-\cos x}{2}=\frac{1}{2}-\frac{1}{2}\cos x.\]`,
+      String.raw`Lấy nguyên hàm: \[\int\left(\frac{1}{2}-\frac{1}{2}\cos x\right)dx=\frac{x}{2}-\frac{1}{2}\sin x+C=\frac{x-\sin x}{2}+C.\]`,
+      String.raw`Kiểm tra: \(\left(\dfrac{x-\sin x}{2}\right)'=\dfrac{1-\cos x}{2}=\sin^2\dfrac{x}{2}\). Đúng.`
+    ],
+    note: String.raw`Gặp \(\sin^2\) hoặc \(\cos^2\): hạ bậc để đưa về \(\cos\) bậc nhất rồi dùng bảng nguyên hàm.`
+  },
+
+  /* ---------- VẬN DỤNG (180 giây) ---------- */
+  {
+    lv: "vd",
+    q: String.raw`Một ô tô đang chạy với vận tốc 20 m/s thì người lái đạp phanh. Từ thời điểm đó, ô tô chuyển động chậm dần đều với vận tốc \(v(t)=-5t+20\) (m/s), trong đó \(t\) (giây) là thời gian tính từ lúc bắt đầu đạp phanh. Hỏi từ lúc đạp phanh đến khi dừng hẳn, ô tô di chuyển được bao nhiêu mét?`,
+    opts: [
+      String.raw`\(80\) m`,
+      String.raw`\(40\) m`,
+      String.raw`\(20\) m`,
+      String.raw`\(45\) m`
+    ],
+    ans: 1,
+    steps: [
+      String.raw`Ô tô dừng hẳn khi \(v(t)=0\Leftrightarrow -5t+20=0\Leftrightarrow t=4\) (giây).`,
+      String.raw`Gọi \(s(t)\) là quãng đường ô tô đi được sau \(t\) giây kể từ lúc đạp phanh. Vì \(s'(t)=v(t)\) nên \(s(t)\) là một nguyên hàm của \(v(t)\): \[s(t)=\int(-5t+20)\,dt=-\frac{5}{2}t^2+20t+C.\]`,
+      String.raw`Lúc bắt đầu đạp phanh, ô tô chưa đi thêm được mét nào: \(s(0)=0\Rightarrow C=0\). Do đó \(s(t)=-\dfrac{5}{2}t^2+20t\).`,
+      String.raw`Quãng đường đi được đến khi dừng hẳn: \[s(4)=-\frac{5}{2}\cdot 4^2+20\cdot 4=-40+80=40\ (\mathrm{m}).\]`
+    ],
+    note: String.raw`Đạo hàm của quãng đường là vận tốc, nên quãng đường là nguyên hàm của vận tốc.`
+  },
+  {
+    lv: "vd",
+    q: String.raw`Biết \(F(x)\) là một nguyên hàm của hàm số \(f(x)=\sqrt{x}+\dfrac{1}{\sqrt{x}}\) trên khoảng \((0;+\infty)\) và \(F(1)=2\). Giá trị của \(F(4)\) bằng`,
+    opts: [
+      String.raw`\(10\)`,
+      String.raw`\(\dfrac{28}{3}\)`,
+      String.raw`\(\dfrac{26}{3}\)`,
+      String.raw`\(\dfrac{22}{3}\)`
+    ],
+    ans: 2,
+    steps: [
+      String.raw`Viết dưới dạng lũy thừa: \(f(x)=x^{\frac{1}{2}}+x^{-\frac{1}{2}}\).`,
+      String.raw`Lấy nguyên hàm từng hạng tử: \[\int x^{\frac{1}{2}}\,dx=\frac{x^{\frac{3}{2}}}{\frac{3}{2}}=\frac{2}{3}x\sqrt{x},\qquad\int x^{-\frac{1}{2}}\,dx=\frac{x^{\frac{1}{2}}}{\frac{1}{2}}=2\sqrt{x}.\]`,
+      String.raw`Suy ra \(F(x)=\dfrac{2}{3}x\sqrt{x}+2\sqrt{x}+C\).`,
+      String.raw`Dùng \(F(1)=2\): \(\dfrac{2}{3}+2+C=2\Leftrightarrow C=-\dfrac{2}{3}\).`,
+      String.raw`Tính \(F(4)\): \[F(4)=\frac{2}{3}\cdot 4\cdot\sqrt{4}+2\sqrt{4}-\frac{2}{3}=\frac{16}{3}+4-\frac{2}{3}=\frac{26}{3}.\]`
+    ],
+    note: String.raw`Đổi căn sang lũy thừa: \(\sqrt{x}=x^{\frac{1}{2}}\) và \(\dfrac{1}{\sqrt{x}}=x^{-\frac{1}{2}}\). Nếu lấy nhầm \(C=\dfrac{2}{3}\) (sai dấu) sẽ ra \(10\).`
+  },
+  {
+    lv: "vd",
+    q: String.raw`Biết \(F(x)\) là một nguyên hàm của hàm số \(f(x)=\tan^2x\) trên khoảng \(\left(-\dfrac{\pi}{2};\dfrac{\pi}{2}\right)\) và \(F\left(\dfrac{\pi}{4}\right)=1\). Giá trị của \(F(0)\) bằng`,
+    opts: [
+      String.raw`\(\dfrac{\pi}{4}\)`,
+      String.raw`\(-\dfrac{\pi}{4}\)`,
+      String.raw`\(1-\dfrac{\pi}{4}\)`,
+      String.raw`\(0\)`
+    ],
+    ans: 0,
+    steps: [
+      String.raw`Từ hằng đẳng thức \(1+\tan^2x=\dfrac{1}{\cos^2x}\) suy ra \[\tan^2x=\frac{1}{\cos^2x}-1.\]`,
+      String.raw`Lấy nguyên hàm: \[F(x)=\int\left(\frac{1}{\cos^2x}-1\right)dx=\tan x-x+C.\]`,
+      String.raw`Dùng \(F\left(\dfrac{\pi}{4}\right)=1\): \(\tan\dfrac{\pi}{4}-\dfrac{\pi}{4}+C=1\Leftrightarrow 1-\dfrac{\pi}{4}+C=1\Leftrightarrow C=\dfrac{\pi}{4}\).`,
+      String.raw`Vậy \(F(x)=\tan x-x+\dfrac{\pi}{4}\), suy ra \[F(0)=\tan 0-0+\frac{\pi}{4}=\frac{\pi}{4}.\]`
+    ],
+    note: String.raw`Không có công thức trực tiếp cho \(\tan^2x\). Nếu nhớ nhầm \(\tan^2x=\dfrac{1}{\cos^2x}+1\) sẽ ra kết quả sai \(-\dfrac{\pi}{4}\).`
+  }
+];
+
+
+const LEVELS = {
+  nb: { name: "Nhận biết", time: 60, pts: 10 },
+  th: { name: "Thông hiểu", time: 120, pts: 20 },
+  vd: { name: "Vận dụng", time: 180, pts: 30 }
+};
+const GIFTS = {
+  x2:   { short: "×2",  title: "Nhân đôi điểm" },
+  p10:  { short: "+10", title: "Thưởng thêm 10 điểm" },
+  p5:   { short: "+5",  title: "Thưởng thêm 5 điểm" },
+  wish: { short: "★",   title: "Lời chúc may mắn" }
+};
+const WISHES = [
+  "Đạo hàm vững thì nguyên hàm chắc!",
+  "Nhớ cộng hằng số C nhé!",
+  "Bình tĩnh, tự tin, bài nào cũng giải được!"
+];
+const TEAM_COLORS = ["#2d5bd3", "#c0306b", "#13917c", "#c77a12"];
+const LETTERS = ["A", "B", "C", "D"];
+
+let state = null;          // game state (serializable)
+let cur = null;            // current open box session
+let muted = false;
+
+/* ---------- utilities ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+const reduceMotion = () => window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+/* ---------- MathJax ---------- */
+const mjReady = new Promise(res => {
+  const t0 = performance.now();
+  (function check() {
+    const MJ = window.MathJax;
+    if (MJ && MJ.startup && MJ.startup.promise && MJ.typesetPromise) { MJ.startup.promise.then(() => res(true), () => res(false)); }
+    else if (performance.now() - t0 > 12000) res(false);
+    else setTimeout(check, 60);
+  })();
+});
+mjReady.then(ok => { if (!ok) $("#mjwarn").hidden = false; });
+async function setMath(el, html) {
+  const ok = await mjReady;
+  if (ok) { try { MathJax.typesetClear([el]); } catch (e) {} }
+  el.innerHTML = html;
+  if (ok) { try { await MathJax.typesetPromise([el]); } catch (e) { console.error(e); } }
+}
+
+/* ---------- sound ---------- */
+let actx = null;
+function ac() { if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} } if (actx && actx.state === "suspended") actx.resume(); return actx; }
+function tone(freq, dur, type = "sine", gain = 0.15, when = 0) {
+  if (muted) return; const c = ac(); if (!c) return;
+  const o = c.createOscillator(), g = c.createGain(); const t = c.currentTime + when;
+  o.type = type; o.frequency.setValueAtTime(freq, t);
+  g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(gain, t + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.connect(g).connect(c.destination); o.start(t); o.stop(t + dur + 0.05);
+}
+const sfx = {
+  open() { [523, 659, 784, 1047].forEach((f, i) => tone(f, 0.18, "triangle", 0.12, i * 0.07)); },
+  tick() { tone(880, 0.06, "square", 0.05); },
+  ok() { [659, 784, 988, 1319].forEach((f, i) => tone(f, 0.22, "triangle", 0.14, i * 0.09)); },
+  bad() { tone(220, 0.35, "sawtooth", 0.08); tone(165, 0.45, "sawtooth", 0.07, 0.18); },
+  gift() { [1047, 1319, 1568].forEach((f, i) => tone(f, 0.16, "sine", 0.1, i * 0.06)); },
+  click() { tone(660, 0.05, "sine", 0.06); }
+};
+
+/* ---------- confetti ---------- */
+const fx = $("#fx"); const fctx = fx.getContext("2d"); let parts = []; let fxRaf = 0;
+function confetti(n = 120) {
+  if (reduceMotion()) return;
+  const cs = getComputedStyle(document.documentElement);
+  const cols = ["--gold", "--nb", "--th", "--vd", "--gold-2"].map(v => cs.getPropertyValue(v).trim());
+  fx.width = innerWidth * devicePixelRatio; fx.height = innerHeight * devicePixelRatio;
+  for (let i = 0; i < n; i++) parts.push({ x: innerWidth / 2 + (Math.random() - .5) * 120, y: innerHeight * .42, vx: (Math.random() - .5) * 14, vy: -Math.random() * 13 - 4, r: Math.random() * 6 + 4, a: Math.random() * 6, va: (Math.random() - .5) * .4, c: cols[i % cols.length], life: 0 });
+  if (!fxRaf) fxRaf = requestAnimationFrame(stepFx);
+}
+function stepFx() {
+  fctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); fctx.clearRect(0, 0, innerWidth, innerHeight);
+  parts = parts.filter(p => p.life < 160 && p.y < innerHeight + 40);
+  for (const p of parts) { p.life++; p.vy += 0.38; p.vx *= 0.99; p.x += p.vx; p.y += p.vy; p.a += p.va;
+    fctx.save(); fctx.translate(p.x, p.y); fctx.rotate(p.a); fctx.fillStyle = p.c; fctx.globalAlpha = Math.max(0, 1 - p.life / 160); fctx.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2); fctx.restore(); }
+  fxRaf = parts.length ? requestAnimationFrame(stepFx) : 0;
+  if (!fxRaf) fctx.clearRect(0, 0, innerWidth, innerHeight);
+}
+
+/* ---------- game state ---------- */
+function newGame(teamCount, names) {
+  const qIdx = shuffle([...QUESTIONS.keys()]);
+  const gifts = shuffle([..."x2 x2 x2 p10 p10 p10 p10 p5 p5 p5 p5 p5 wish wish wish".split(" ")]);
+  state = {
+    teams: Array.from({ length: teamCount }, (_, i) => ({ name: (names && names[i]) || (teamCount === 1 ? "Lớp mình" : "Đội " + (i + 1)), score: 0, right: 0, done: 0 })),
+    turn: 0,
+    boxes: qIdx.map((q, i) => ({ q, gift: gifts[i], res: null })),
+    finished: false
+  };
+  renderAll();
+}
+function giftPoints(base, gift) {
+  if (gift === "x2") return base * 2;
+  if (gift === "p10") return base + 10;
+  if (gift === "p5") return base + 5;
+  return base;
+}
+
+/* ---------- render: board, scores, setup ---------- */
+function renderAll() { renderScores(); renderBoard(); renderSetup(); }
+function renderScores() {
+  const opened = state.boxes.filter(b => b.res).length;
+  $("#scores").innerHTML = state.teams.map((t, i) => `
+    <div class="team ${i === state.turn && !state.finished ? "turn" : ""}" style="--tc:${TEAM_COLORS[i]}">
+      <span class="dot">${i + 1}</span>
+      <div style="min-width:0">
+        <span class="turnlbl">Đến lượt</span>
+        <div class="nm" title="${esc(t.name)}">${esc(t.name)}</div>
+        <div class="sub">${t.right}/${t.done} câu đúng</div>
+      </div>
+      <span class="sc" style="margin-left:auto">${t.score}</span>
+    </div>`).join("") +
+    `<div class="progress">Đã mở <b>${opened}</b>/15 hộp</div>`;
+}
+function renderBoard() {
+  $("#grid").innerHTML = state.boxes.map((b, i) => {
+    const q = QUESTIONS[b.q], L = LEVELS[q.lv];
+    let stamp = "";
+    if (b.res) stamp = b.res.correct ? `<span class="stamp ok">+${b.res.points}</span>` : `<span class="stamp bad">${b.res.timeout ? "Hết giờ" : "Sai"}</span>`;
+    const who = b.res && state.teams.length > 1 ? ` · ${esc(state.teams[b.res.team]?.name || "")}` : "";
+    return `<div class="slot ${b.res ? "opened" : ""}">
+      <button class="box" type="button" data-i="${i}" aria-label="Hộp số ${i + 1}, ${L.name}, ${L.time} giây${b.res ? ", đã mở, bấm để xem lời giải" : ""}">
+        <div class="gift ${q.lv}"><div class="g-lid"><div class="g-bow"></div></div><div class="g-body"></div><span class="g-num">${i + 1}</span>${stamp}</div>
+      </button>
+      <span class="lbl">${L.name}<i>${b.res ? (b.res.correct ? "Đúng" : "Chưa đúng") + who : L.time + " giây · " + L.pts + " điểm"}</i></span>
+    </div>`;
+  }).join("");
+}
+function renderSetup() {
+  const n = state.teams.length;
+  document.querySelectorAll('input[name="tc"]').forEach(r => r.checked = +r.value === n);
+  $("#names").innerHTML = state.teams.map((t, i) => `<input id="tn${i}" type="text" maxlength="24" value="${esc(t.name)}" aria-label="Tên đội ${i + 1}" data-i="${i}">`).join("");
+}
+
+/* ---------- open a box ---------- */
+$("#grid").addEventListener("click", e => {
+  const btn = e.target.closest(".box"); if (!btn) return;
+  const i = +btn.dataset.i; const b = state.boxes[i];
+  ac();
+  if (b.res) openReview(i); else openPlay(i);
+});
+
+function showStage() { $("#stage").hidden = false; document.body.classList.add("staged"); $("#stage").scrollTop = 0; }
+function hideStage() { $("#stage").hidden = true; document.body.classList.remove("staged"); }
+
+function questionHTML(i, q, L, mode) {
+  const team = state.teams[state.turn];
+  return `
+  <div class="qhead">
+    <div class="qmeta">
+      <span class="chip ${q.lv}">${L.name}</span>
+      <span class="chip plain">Hộp số ${i + 1}</span>
+      <span class="chip plain">${L.pts} điểm</span>
+      ${mode === "play" && state.teams.length > 1 ? `<span class="turnline">Lượt trả lời: <b>${esc(team.name)}</b></span>` : ""}
+    </div>
+    ${mode === "play" ? `<div class="timer" id="timer" style="--c:var(--${q.lv})">
+      <div class="ring"><svg viewBox="0 0 80 80"><circle class="trk" cx="40" cy="40" r="34"/><circle class="bar" id="tbar" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="0"/></svg><span class="num" id="tnum">${fmt(L.time)}</span></div>
+    </div>` : ""}
+  </div>
+  <div class="qcard ${q.lv}" id="qcard"><span class="qno">Câu hỏi.</span><span id="qtext"></span></div>
+  <div class="opts" id="opts">
+    ${q.opts.map((o, k) => `<button class="opt" type="button" data-k="${k}" ${mode === "review" ? "disabled" : ""}><span class="k">${LETTERS[k]}</span><span class="v" id="ov${k}"></span></button>`).join("")}
+  </div>
+  ${mode === "play" ? `<div class="acts" id="acts">
+    <span class="keys">Phím tắt: A, B, C, D để chọn · Enter để chốt</span>
+    <div class="right">
+      <button class="btn" id="pauseBtn" type="button">Tạm dừng</button>
+      <button class="btn primary" id="lockBtn" type="button" disabled>Chốt đáp án</button>
+    </div>
+  </div><div class="pausenote" id="pausenote" hidden>Đang tạm dừng · đồng hồ đã dừng</div>` : ""}
+  <div class="result" id="result" hidden></div>`;
+}
+function fmt(s) { s = Math.max(0, Math.ceil(s)); const m = Math.floor(s / 60), r = s % 60; return m + ":" + String(r).padStart(2, "0"); }
+
+async function fillQuestion(q) {
+  const jobs = [setMath($("#qtext"), q.q)];
+  q.opts.forEach((o, k) => jobs.push(setMath($("#ov" + k), o)));
+  await Promise.all(jobs);
+}
+
+async function openPlay(i) {
+  const b = state.boxes[i], q = QUESTIONS[b.q], L = LEVELS[q.lv];
+  cur = { i, mode: "play", sel: null, done: false, total: L.time, remain: L.time, running: false, last: 0, raf: 0, lastSec: L.time };
+  showStage();
+  const st = $("#stageIn");
+  const anim = !reduceMotion();
+  if (anim) {
+    st.innerHTML = `<div class="reveal" id="reveal"><div class="gift ${q.lv}"><div class="g-lid"><div class="g-bow"></div></div><div class="g-body"></div><span class="g-num">${i + 1}</span></div></div>`;
+    sfx.open();
+    requestAnimationFrame(() => $("#reveal").classList.add("go"));
+    setTimeout(() => confetti(60), 650);
+    await new Promise(r => setTimeout(r, 1050));
+  }
+  st.innerHTML = questionHTML(i, q, L, "play");
+  st.style.visibility = "hidden";
+  await fillQuestion(q);
+  st.style.visibility = "";
+  bindPlay(q);
+  startTimer();
+}
+
+function bindPlay(q) {
+  $("#opts").addEventListener("click", e => { const o = e.target.closest(".opt"); if (!o || cur.done || !cur.running) return; select(+o.dataset.k); });
+  $("#lockBtn").addEventListener("click", () => { if (cur.sel !== null) finish(false); });
+  $("#pauseBtn").addEventListener("click", togglePause);
+}
+function select(k) {
+  cur.sel = k; sfx.click();
+  document.querySelectorAll(".opt").forEach(o => o.classList.toggle("sel", +o.dataset.k === k));
+  document.querySelectorAll(".opt").forEach(o => o.setAttribute("aria-pressed", +o.dataset.k === k ? "true" : "false"));
+  $("#lockBtn").disabled = false;
+}
+
+/* ---------- timer ---------- */
+function startTimer() { cur.running = true; cur.last = performance.now(); cur.raf = requestAnimationFrame(tick); }
+function tick(now) {
+  if (!cur || !cur.running) return;
+  cur.remain = Math.max(0, cur.remain - (now - cur.last) / 1000); cur.last = now;
+  drawTimer();
+  const sec = Math.ceil(cur.remain);
+  if (sec !== cur.lastSec) { cur.lastSec = sec; if (sec <= 10 && sec > 0) sfx.tick(); }
+  if (cur.remain <= 0) { finish(true); return; }
+  cur.raf = requestAnimationFrame(tick);
+}
+function drawTimer() {
+  const C = 213.6; const f = cur.remain / cur.total;
+  const bar = $("#tbar"); if (bar) bar.setAttribute("stroke-dashoffset", (C * (1 - f)).toFixed(2));
+  const n = $("#tnum"); if (n) n.textContent = fmt(cur.remain);
+  const t = $("#timer"); if (t) t.classList.toggle("low", cur.remain <= 10);
+}
+function togglePause() {
+  if (cur.done) return;
+  const st = $("#stageIn");
+  if (cur.running) { cur.running = false; cancelAnimationFrame(cur.raf); st.classList.add("paused"); $("#pauseBtn").textContent = "Tiếp tục"; $("#pausenote").hidden = false; $("#lockBtn").disabled = true; }
+  else { st.classList.remove("paused"); $("#pauseBtn").textContent = "Tạm dừng"; $("#pausenote").hidden = true; $("#lockBtn").disabled = cur.sel === null; startTimer(); }
+}
+
+/* ---------- grading ---------- */
+async function finish(timeout) {
+  if (cur.done) return;
+  cur.done = true; cur.running = false; cancelAnimationFrame(cur.raf);
+  const b = state.boxes[cur.i], q = QUESTIONS[b.q], L = LEVELS[q.lv];
+  const chosen = cur.sel;
+  const correct = chosen !== null && chosen === q.ans;
+  const points = correct ? giftPoints(L.pts, b.gift) : 0;
+  const team = state.turn;
+  b.res = { team, chosen, correct, points, timeout: timeout && chosen === null };
+  const T = state.teams[team]; T.done++; if (correct) { T.right++; T.score += points; }
+  if (state.teams.length > 1) state.turn = (state.turn + 1) % state.teams.length;
+  if (state.boxes.every(x => x.res)) state.finished = true;
+
+  $("#acts").hidden = true; $("#pausenote").hidden = true; $("#stageIn").classList.remove("paused");
+  markOptions(q, chosen);
+  if (correct) { sfx.ok(); confetti(140); setTimeout(() => sfx.gift(), 450); } else sfx.bad();
+  await showResult(cur.i, "play");
+}
+function markOptions(q, chosen) {
+  document.querySelectorAll(".opt").forEach(o => {
+    const k = +o.dataset.k; o.disabled = true; o.classList.remove("sel");
+    if (k === q.ans) o.classList.add("right"); else if (k === chosen) o.classList.add("wrong");
+  });
+}
+async function showResult(i, mode) {
+  const b = state.boxes[i], q = QUESTIONS[b.q], L = LEVELS[q.lv], r = b.res, G = GIFTS[b.gift];
+  const teamName = state.teams[r.team] ? state.teams[r.team].name : "";
+  const multi = state.teams.length > 1;
+  let head, sub, cls;
+  if (r.correct) {
+    cls = "ok"; head = mode === "play" ? "Chính xác!" : "Đã trả lời đúng";
+    const calc = b.gift === "x2" ? `${L.pts} × 2 = ${r.points}` : b.gift === "wish" ? `${r.points}` : `${L.pts} + ${r.points - L.pts} = ${r.points}`;
+    sub = `${multi ? esc(teamName) + " nhận" : "Bạn nhận"} <b>${calc} điểm</b>.`;
+  } else {
+    cls = "bad"; head = r.timeout ? "Hết giờ!" : (mode === "play" ? "Chưa đúng rồi" : "Đã trả lời chưa đúng");
+    sub = `${multi ? esc(teamName) + " không được điểm. " : ""}${r.timeout ? "Chưa chốt đáp án nào." : `Đã chọn ${LETTERS[r.chosen]}.`} Đáp án đúng là <b>${LETTERS[q.ans]}</b>.`;
+  }
+  const giftTxt = r.correct
+    ? (b.gift === "wish" ? `<b>${G.title}</b>${WISHES[i % WISHES.length]}` : `<b>${G.title}</b>Quà đã được cộng vào điểm.`)
+    : `<b>Trong hộp có: ${G.title}</b>Rất tiếc, món quà này đã bay mất.`;
+  const res = $("#result");
+  res.innerHTML = `
+    <div class="verdict ${cls}">
+      <div><h3>${head}</h3><p>${sub}</p></div>
+      <div class="giftcard pop"><span class="gv">${G.short}</span><span class="gt">${giftTxt}</span></div>
+    </div>
+    <div class="solution">
+      <h3>Lời giải chi tiết</h3>
+      <ol id="steps">${q.steps.map(() => "<li><div></div></li>").join("")}</ol>
+      <p class="conclude" id="concl"></p>
+      <div class="note" id="note"></div>
+    </div>
+    <div class="back">
+      <button class="btn primary" id="backBtn" type="button">${state.finished && mode === "play" ? "Xem kết quả chung cuộc" : "Về bảng hộp quà"}</button>
+    </div>`;
+  res.hidden = false;
+  const lis = res.querySelectorAll("#steps li > div");
+  await Promise.all([
+    ...q.steps.map((s, k) => setMath(lis[k], s)),
+    setMath($("#concl"), `Vậy đáp án đúng là <b>${LETTERS[q.ans]}</b>: ${q.opts[q.ans]}`),
+    setMath($("#note"), "Ghi nhớ: " + q.note)
+  ]);
+  $("#backBtn").addEventListener("click", closeStage);
+  if (mode === "play") setTimeout(() => res.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }), 150);
+  $("#backBtn").focus({ preventScroll: true });
+}
+
+async function openReview(i) {
+  const b = state.boxes[i], q = QUESTIONS[b.q], L = LEVELS[q.lv];
+  cur = { i, mode: "review", done: true, running: false };
+  showStage();
+  const st = $("#stageIn");
+  st.innerHTML = questionHTML(i, q, L, "review");
+  await fillQuestion(q);
+  markOptions(q, b.res.chosen);
+  await showResult(i, "review");
+}
+
+function closeStage() {
+  if (cur && cur.raf) cancelAnimationFrame(cur.raf);
+  cur = null; hideStage(); renderScores(); renderBoard();
+  if (state.finished && !state.shownFinal) { state.shownFinal = true; showFinal(); }
+}
+
+/* ---------- final results ---------- */
+function showFinal() {
+  const ranked = state.teams.map((t, i) => ({ ...t, i })).sort((a, b) => b.score - a.score || b.right - a.right);
+  const solo = state.teams.length === 1;
+  const t0 = ranked[0];
+  const title = solo ? `${t0.right}/15 câu đúng` : (ranked.length > 1 && ranked[1].score === t0.score ? "Hòa điểm!" : `${esc(t0.name)} thắng!`);
+  const lead = solo ? `Tổng điểm: ${t0.score}. ${t0.right >= 13 ? "Xuất sắc, nắm chắc bảng nguyên hàm!" : t0.right >= 9 ? "Khá lắm, ôn lại các câu sai để hoàn thiện nhé." : "Hãy xem lại lời giải từng hộp để ôn tập thêm."}` : "Bảng xếp hạng sau khi mở hết 15 hộp quà.";
+  showStage();
+  $("#stageIn").innerHTML = `
+    <div class="final">
+      <h2>${title}</h2>
+      <p class="lead">${lead}</p>
+      <div class="rank">${ranked.map((t, k) => `
+        <div class="r ${k === 0 ? "first" : ""}">
+          <span class="pos">${k + 1}</span>
+          <div style="min-width:0"><div class="nm">${esc(t.name)}</div><div class="st">${t.right}/${t.done} câu đúng</div></div>
+          <span class="pts">${t.score}</span>
+        </div>`).join("")}</div>
+      <div class="row">
+        <button class="btn" id="fReview" type="button">Xem lại lời giải từng hộp</button>
+        <button class="btn primary" id="fNew" type="button">Chơi ván mới</button>
+      </div>
+    </div>`;
+  if (!solo || t0.right >= 9) { confetti(180); sfx.ok(); }
+  $("#fReview").addEventListener("click", () => { hideStage(); });
+  $("#fNew").addEventListener("click", () => { hideStage(); newGame(state.teams.length, state.teams.map(t => t.name)); });
+}
+
+/* ---------- keyboard ---------- */
+document.addEventListener("keydown", e => {
+  if (!cur || cur.mode !== "play" || cur.done) return;
+  if (e.target.closest && e.target.closest("input")) return;
+  const k = e.key.toUpperCase();
+  const map = { A: 0, B: 1, C: 2, D: 3, "1": 0, "2": 1, "3": 2, "4": 3 };
+  if (k in map && cur.running) { e.preventDefault(); select(map[k]); }
+  else if (e.key === "Enter" && cur.sel !== null && cur.running) { e.preventDefault(); finish(false); }
+  else if (e.key === " " && e.target === document.body) { e.preventDefault(); togglePause(); }
+});
+
+/* ---------- toolbar & setup ---------- */
+function hasProgress() { return state.boxes.some(b => b.res); }
+let pendingCount = null;
+$("#newBtn").addEventListener("click", () => {
+  pendingCount = null;
+  if (hasProgress() && !state.finished) $("#newConfirm").hidden = false;
+  else newGame(state.teams.length, state.teams.map(t => t.name));
+});
+$("#newYes").addEventListener("click", () => {
+  $("#newConfirm").hidden = true;
+  const n = pendingCount || state.teams.length;
+  const names = state.teams.map(t => t.name);
+  newGame(n, n === state.teams.length ? names : null);
+  pendingCount = null;
+});
+$("#newNo").addEventListener("click", () => { $("#newConfirm").hidden = true; pendingCount = null; renderSetup(); });
+document.querySelectorAll('input[name="tc"]').forEach(r => r.addEventListener("change", () => {
+  const n = +r.value; if (n === state.teams.length) return;
+  if (hasProgress() && !state.finished) { pendingCount = n; $("#newConfirm").hidden = false; $("#newConfirm").scrollIntoView({ block: "nearest" }); }
+  else newGame(n, null);
+}));
+$("#names").addEventListener("input", e => {
+  const inp = e.target.closest("input"); if (!inp) return;
+  const i = +inp.dataset.i; state.teams[i].name = inp.value.trim() || (state.teams.length === 1 ? "Lớp mình" : "Đội " + (i + 1));
+  renderScores(); renderBoard();
+});
+function setMuted(m) {
+  muted = m; store("hqnh-muted", m ? "1" : "0");
+  $("#soundBtn").setAttribute("aria-pressed", m ? "false" : "true");
+  $("#soundLbl").textContent = m ? "Âm thanh: tắt" : "Âm thanh: bật";
+  $("#soundWave").style.opacity = m ? "0.15" : "1";
+}
+$("#soundBtn").addEventListener("click", () => { setMuted(!muted); if (!muted) { ac(); sfx.click(); } });
+
+/* ---------- boot (with live-update snapshot) ---------- */
+window.claude?.hot?.snapshot?.(() => ({ state, muted }));
+function start(data) {
+  setMuted(load("hqnh-muted") === "1" || !!(data && data.muted));
+  if (data && data.state && Array.isArray(data.state.boxes) && data.state.boxes.length === 15) { state = data.state; renderAll(); }
+  else newGame(2, null);
+}
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+</script>
+
+</body></html>
